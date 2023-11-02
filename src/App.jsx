@@ -2,32 +2,29 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import  Editor  from '@monaco-editor/react'
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const navigate = useNavigate()
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path='/' element={<>
+          <h1>Tester del editor</h1>
+          <NavLink to='/tester'>Ir a la consola</NavLink>
+        </>}/>
+        <Route path='/tester' element={<>
+          <button onClick={()=>{navigate('/')}}>Home</button>
+          <Editor
+            width="100%"
+            height="90vh"
+            defaultLanguage='javascript'
+            theme='vs-dark'
+          />
+        </>}/>
+      </Routes>
     </>
   )
 }
