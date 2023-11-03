@@ -121,7 +121,7 @@ const ConsoleJS = () => {
           </div>
           <Editor
             width="100%"
-            height="550px"
+            height="490px"
             defaultLanguage='javascript'
             theme='vs-dark'
             onMount={handleEditorDidMount}
