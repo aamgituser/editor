@@ -77,7 +77,95 @@
     padding-right: 10px;
     border-radius: 5px;
 }
+
+.IDE__React{
+    width: 98%;
+    height: 687px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.719);
+}
   
+.IDE__React__aside{
+    width: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.IDE__React__aside-folder{
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.IDE__React__aside-file{
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 5px;
+    padding: 5px 17px;
+    cursor: pointer;
+}
+
+.IDE__React__aside-icon{
+    width: 100%;
+}
+
+
+.IDE__React__header{
+    height: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.IDE__React__header-icon{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 7px;
+    font-size: 13px;
+    border-left: 1px solid rgba(255, 255, 255, 0.267);
+    border-right: 1px solid rgba(255, 255, 255, 0.267);
+}
+
+.IDE__React__header-iconCTA{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 18px;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 7px;
+    font-size: 13px;
+    border-left: 1px solid rgb(29, 29, 29);
+    border-right: 1px solid rgb(29, 29, 29);
+}
+
+.IDE__React__lienzo{
+    width: calc(100% - 200px);
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
 
 @media screen and (max-width:1020px) {
     .IDE__JS__btn{

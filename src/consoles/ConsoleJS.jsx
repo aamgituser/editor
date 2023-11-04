@@ -1,7 +1,4 @@
 /* eslint-disable no-unused-vars */
-
-
-
 import  Editor  from '@monaco-editor/react'
 import { useNavigate } from 'react-router-dom'
 import './styles.css'
@@ -9,7 +6,7 @@ import NavBarConsole from '../components/NavBarConsole'
 import Main from '../components/Main'
 import { useRef, useState } from 'react'
 import DOMPurify from 'dompurify'
-
+import { CiPlay1 } from "react-icons/ci";
 
 const ConsoleJS = () => {
   const navigate = useNavigate()
@@ -114,10 +111,14 @@ const ConsoleJS = () => {
           <div style={{width:"100%",border:"1px solid black"}}>Consigna</div>
           <div className='IDE__JS__btn'>Ejecutar testers</div>
         </div>
+
+        
         <div style={{width:"97%",margin:"0 auto",position:"relative"}}>
           <div style={{height:25,width:"100%",boxSizing:"border-box",backgroundColor:"green",padding:"0 10px",display:"flex",justifyContent:"flex-end"}}>
-            <div style={{cursor:"pointer"}} onClick={()=>{
-              ejecutar()}}>Ic</div>
+            <div style={{cursor:"pointer",fontSize:20}} onClick={()=>{
+              ejecutar()}}>
+              <CiPlay1/>
+            </div>
           </div>
           <Editor
             width="100%"

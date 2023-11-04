@@ -7,6 +7,8 @@ import { NavLink, Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import { AppContext } from './context/AppContext'
 import LoginScreen from './screens/LoginScreen'
 import ConsoleJS from './consoles/ConsoleJS'
+import ConsoleReact from './consoles/ConsoleReact'
+import Tester from './consoles/Tester'
 
 function ConsoleJavascript(){
   const navigate = useNavigate();
@@ -45,10 +47,19 @@ function App() {
             <NavLink style={{display:"block"}} to='/consolehtml'>Ir a la consola HTML</NavLink>
             <NavLink style={{display:"block"}} to='/consolejs'>Ir a la consola JS</NavLink>
             <NavLink style={{display:"block"}} to='/consolecss'>Ir a la consola CSS</NavLink>
-            <NavLink style={{display:"block"}} to='/tester'>Tester</NavLink>
+            <NavLink style={{display:"block"}} to='/consolereact'>React</NavLink>
+            <NavLink style={{display:"block"}} to='/tester'>Tester Javascript</NavLink>
+            <NavLink style={{display:"block"}} to='/testy'>Tester</NavLink>
+
           </>}/>
+
+          <Route path='/testy' element={<Tester/>}/>
+
           
+          {/*consola javascript, ya solucione el problema. El problema eran los estilos css*/}
           <Route path='/consolejs' element={<ConsoleJavascript/>}/>
+          <Route path='/consolereact' element={<ConsoleReact/>}/>
+
 
           <Route path='/consolecss' element={<>
             <button onClick={()=>{navigate('/')}}>Home</button>
