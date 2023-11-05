@@ -10,7 +10,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
+  position: relative;
 }
+
+
+.headerPrivate__menu{
+  padding: 20px 40px;
+  border: 1px solid black;
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  z-index: 300;
+  background-color: blueviolet;
+}
+
   
 .mainPrivate{
   width: 100%;

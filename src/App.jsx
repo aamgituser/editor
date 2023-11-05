@@ -9,6 +9,7 @@ import LoginScreen from './screens/LoginScreen'
 import ConsoleJS from './consoles/ConsoleJS'
 import ConsoleReact from './consoles/ConsoleReact'
 import Tester from './consoles/Tester'
+import ConsoleDDF from './consoles/ConsoleDDF'
 
 function ConsoleJavascript(){
   const navigate = useNavigate();
@@ -43,49 +44,15 @@ function App() {
         <Routes>
           <Route path='/' element={<>
             <header className='header'></header>
-            <h1>Tester del editor</h1>
-            <NavLink style={{display:"block"}} to='/consolehtml'>Ir a la consola HTML</NavLink>
-            <NavLink style={{display:"block"}} to='/consolejs'>Ir a la consola JS</NavLink>
-            <NavLink style={{display:"block"}} to='/consolecss'>Ir a la consola CSS</NavLink>
-            <NavLink style={{display:"block"}} to='/consolereact'>React</NavLink>
-            <NavLink style={{display:"block"}} to='/tester'>Tester Javascript</NavLink>
-            <NavLink style={{display:"block"}} to='/testy'>Tester</NavLink>
-
-          </>}/>
-
-          <Route path='/testy' element={<Tester/>}/>
-
-          
-          {/*consola javascript, ya solucione el problema. El problema eran los estilos css*/}
-          <Route path='/consolejs' element={<ConsoleJavascript/>}/>
-          <Route path='/consolereact' element={<ConsoleReact/>}/>
-
-
-          <Route path='/consolecss' element={<>
-            <button onClick={()=>{navigate('/')}}>Home</button>
-            <Editor
-              width="100%"
-              height="90vh"
-              defaultLanguage='css'
-              theme='vs-dark'
-            />
+            <h1>Testers de consolas</h1>
+            <NavLink style={{display:"block"}} to='/react'>Consola React</NavLink>  
+            <NavLink style={{display:"block"}} to='/javascript'>Consola Javascript</NavLink>  
+            <NavLink style={{display:"block"}} to='/diagrama'>Consola Diagrama De Flujo</NavLink>  
           </>}/>
           
-          <Route path='/consolehtml' element={<>
-            <button onClick={()=>{navigate('/')}}>Home</button>
-            <Editor
-              width="100%"
-              height="90vh"
-              defaultLanguage='html'
-              theme='vs-dark'
-            />
-          </>}/>
-
-
-          <Route path='/tester' element={<>
-            <ConsoleJS/>
-          </>}/>
-
+          <Route path='/react' element={<ConsoleReact/>}/>
+          <Route path='/javascript' element={<ConsoleJS/>}/>
+          <Route path='/diagrama' element={<ConsoleDDF/>}/>
 
           <Route path='/login' element={<Navigate to='/'/>}/>
         </Routes>

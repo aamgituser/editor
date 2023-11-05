@@ -1,3 +1,4 @@
+
 /* eslint-disable no-unused-vars */
 import  Editor  from '@monaco-editor/react'
 import { useNavigate } from 'react-router-dom'
@@ -7,6 +8,7 @@ import Main from '../components/Main'
 import { useRef, useState } from 'react'
 import DOMPurify from 'dompurify'
 import { CiPlay1 } from "react-icons/ci";
+import { BsTrash } from "react-icons/bs";
 
 const ConsoleJS = () => {
   const navigate = useNavigate()
@@ -58,6 +60,9 @@ const ConsoleJS = () => {
           }
           appendToConsole(' ❌ Warning: ' + message, 'error');
         },
+        clear: () => {
+          clearConsole();
+        }
       };
   
       const sanitizedJsCode = DOMPurify.sanitize(jsCode);
@@ -102,6 +107,13 @@ const ConsoleJS = () => {
   }
   
 
+  function clearConsole() {
+    const consoleDiv = document.querySelector('.IDE__JS__console');
+    while (consoleDiv.firstChild) {
+      consoleDiv.removeChild(consoleDiv.firstChild);
+    }
+  }
+
 
   return (
     <>  
@@ -112,7 +124,7 @@ const ConsoleJS = () => {
           <div className='IDE__JS__btn'>Ejecutar testers</div>
         </div>
 
-        
+
         <div style={{width:"97%",margin:"0 auto",position:"relative"}}>
           <div style={{height:25,width:"100%",boxSizing:"border-box",backgroundColor:"green",padding:"0 10px",display:"flex",justifyContent:"flex-end"}}>
             <div style={{cursor:"pointer",fontSize:20}} onClick={()=>{
@@ -127,8 +139,12 @@ const ConsoleJS = () => {
             theme='vs-dark'
             onMount={handleEditorDidMount}
           />
-          <div style={{width:"100%",boxSizing:"border-box",padding:"5px 15px",backgroundColor:"black",color:"white"}}>
-            Terminal
+          <div style={{width:"100%",boxSizing:"border-box",padding:"5px 20px",backgroundColor:"black",color:"white",display:"flex",justifyContent:"space-between"}}>
+            <span>Terminal</span>
+            <div onClick={()=>{clearConsole()}} style={{cursor:"pointer",display:"flex",alignItems:"center",gap:4}}>
+              <BsTrash/>
+              <span>Clear</span>
+            </div>
           </div>
           <div className='IDE__JS__consoleCont'>
             <div className='IDE__JS__console'>

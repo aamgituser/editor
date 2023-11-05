@@ -1,3 +1,5 @@
+/*IDE DE JAVASCRIPT*/
+
 .IDE__JS__header{
     width: 100%;
     box-sizing: border-box;
@@ -7,7 +9,6 @@
     gap: 10px;
 }
 
-/*boton de los testers*/
 .IDE__JS__btn{
     width: 40%;
     padding: 10px 0;
@@ -19,8 +20,6 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
-
-/*Consola*/
 
 .IDE__JS__consoleCont{
     width: 100%;
@@ -40,22 +39,22 @@
     gap: 7px;
     flex-direction: column-reverse;
     align-items: flex-start;
-    justify-content: flex-end; /* Mantiene los elementos en la parte inferior */
+    justify-content: flex-end; 
 }
   
 
 .IDE__JS__consoleCont::-webkit-scrollbar {
-  width: 8px; /* Ancho del scrollbar */
+  width: 8px;
 }
 
 .IDE__JS__consoleCont::-webkit-scrollbar-thumb {
-  background-color: red; /* Color del thumb (agarre) */
-  border-radius: 4px; /* Borde redondeado del thumb */
+  background-color: red; 
+  border-radius: 4px; 
 }
 
 .IDE__JS__consoleCont::-webkit-scrollbar-track {
-  background-color: green; /* Color del track (rastro) */
-  border-radius: 0; /* Borde redondeado del track */
+  background-color: green; 
+  border-radius: 0; 
 }
 
 .console-error{
@@ -77,6 +76,10 @@
     padding-right: 10px;
     border-radius: 5px;
 }
+
+/*
+IDE DE REACT
+*/
 
 .IDE__React{
     width: 98%;
@@ -166,6 +169,20 @@
     box-sizing: border-box;
     border: 1px solid red;
 }
+
+/*
+IDE DEL DIAGRAMA DE FLUJO
+*/
+
+.IDE__DDF{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 630px;
+}
+
+
 
 @media screen and (max-width:1020px) {
     .IDE__JS__btn{
