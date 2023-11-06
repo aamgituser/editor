@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import NavBarConsole from '../components/NavBarConsole'
 import { v4 as uuidv4 } from 'uuid';
-
+import { HiPlus } from "react-icons/hi";
 
 function Inicio(){
   return(
@@ -54,7 +54,7 @@ function Salida({id,contenido,valor,onChange}){
     </>
   )
 }
-function IfStructure({id,contenido,valor,onChange,arrayEstructuras,setSelectedGeneral,selectedGeneral,setSelectedStructure,getSelectedComponent}){
+function IfStructure({id,contenido,valor,onChange,arrayEstructuras,setSelectedGeneral,selectedGeneral,setSelectedStructure,getSelectedComponent,selectedStructure}){
   return(
     <>
       <div className='arrow'></div>
@@ -94,11 +94,35 @@ function IfStructure({id,contenido,valor,onChange,arrayEstructuras,setSelectedGe
                   <>
                   </>
                 }
-                <button onClick={()=>{
-                  setSelectedGeneral(false)
-                  console.log('es la rama true')
-                  setSelectedStructure({id:id,branch:"true"})
-                }}>+</button>
+                {
+                  selectedGeneral === false ?
+                  <>
+                    {
+                      selectedStructure.id === id && selectedStructure.branch === "true" ?
+                      <div className='IDE__DDF__lienzo-btn-CTA' onClick={()=>{
+                        setSelectedGeneral(false)
+                        setSelectedStructure({id:id,branch:"true"})
+                      }}>
+                        <HiPlus/>
+                      </div>
+                      :
+                      <div className='IDE__DDF__lienzo-btn' onClick={()=>{
+                        setSelectedGeneral(false)
+                        setSelectedStructure({id:id,branch:"true"})
+                      }}>
+                        <HiPlus/>
+                      </div>
+                    }
+                  </>
+                  :
+                  <div className='IDE__DDF__lienzo-btn' onClick={()=>{
+                    setSelectedGeneral(false)
+                    setSelectedStructure({id:id,branch:"true"})
+                  }}>
+                    <HiPlus/>
+                  </div>
+                }
+                
               </div>
             </div>
             <div className='bloque-if-branch-container'>
@@ -122,11 +146,35 @@ function IfStructure({id,contenido,valor,onChange,arrayEstructuras,setSelectedGe
                   :
                   <></>
                 }
-                <button onClick={()=>{
-                  setSelectedGeneral(false)
-                  console.log('es la rama false')
-                  setSelectedStructure({id:id,branch:"false"})
-                }}>+</button>
+
+                {
+                  selectedGeneral === false ?
+                  <>
+                    {
+                      selectedStructure.id === id && selectedStructure.branch === "false" ?
+                      <div className='IDE__DDF__lienzo-btn-CTA' onClick={()=>{
+                        setSelectedGeneral(false)
+                        setSelectedStructure({id:id,branch:"false"})
+                      }}>
+                        <HiPlus/>
+                      </div>
+                      :
+                      <div className='IDE__DDF__lienzo-btn' onClick={()=>{
+                        setSelectedGeneral(false)
+                        setSelectedStructure({id:id,branch:"false"})
+                      }}>
+                        <HiPlus/>
+                      </div>
+                    }
+                  </>
+                  :
+                  <div className='IDE__DDF__lienzo-btn' onClick={()=>{
+                    setSelectedGeneral(false)
+                    setSelectedStructure({id:id,branch:"false"})
+                  }}>
+                    <HiPlus/>
+                  </div>
+                }
               </div>
             </div>
           </div>
@@ -199,6 +247,7 @@ const ConsoleDDF = () => {
         selectedGeneral={selectedGeneral}
         setSelectedStructure={setSelectedStructure}
         getSelectedComponent={getSelectedComponent}
+        selectedStructure = {selectedStructure}
         />
 
       case "inicio":
@@ -246,7 +295,16 @@ const ConsoleDDF = () => {
                 }
               </>
             }
-            <button onClick={()=>{setSelectedGeneral(true)}}>+</button>
+            {
+              selectedGeneral === true ?
+              <div onClick={()=>{setSelectedGeneral(true)}} className='IDE__DDF__lienzo-btn-CTA'>
+                <HiPlus/>
+              </div>
+              :
+              <div onClick={()=>{setSelectedGeneral(true)}} className='IDE__DDF__lienzo-btn'>
+                <HiPlus/>
+              </div>
+            }
 
             {/*////////////////////////*/}
             </div>
@@ -294,7 +352,11 @@ const ConsoleDDF = () => {
               <span className="IDE__DFF__aside-ttl">Proceso</span>
             </div>
 
-            <div className='IDE__DDF__aside-icon' onClick={()=>{setInputValues([])}} style={{justifyContent:"center",marginTop:20}}>
+            <div className='IDE__DDF__aside-icon' onClick={()=>{
+              setInputValues([])
+              setSelectedGeneral(true)
+              setSelectedStructure(null)
+              }} style={{justifyContent:"center",marginTop:20}}>
               <span className='IDE__DDF__aside-delete-ttl'>Borrar</span>
             </div>
           </div>
