@@ -460,6 +460,12 @@ IDE DEL DIAGRAMA DE FLUJO
         justify-content: center;
     }
 
+    .IDE__DDF__aside-icon:hover{
+        width: 95%;        
+        background-color: white;
+    }
+    
+
     .IDE__DFF__aside-ttl{
         display: none;
     }
