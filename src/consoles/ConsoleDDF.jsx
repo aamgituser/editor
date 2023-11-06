@@ -336,8 +336,8 @@ const ConsoleDDF = () => {
 
               <div style={{height:20,width:30,display:"flex",flexDirection:"column",justifyContent:"center"}}>
                 <div style={{width:20,height:7,backgroundColor:"red",margin:"0 auto"}}></div>
-                <div style={{height:5,width:1,backgroundColor:"black",margin:"0 auto"}}></div>
-                <div style={{height:5,width:20,margin:"0 auto",borderTop:"1px solid black",borderLeft:"1px solid black",borderRight:"1px solid black"}}></div>
+                <div style={{height:5,width:1,backgroundColor:"white",margin:"0 auto"}}></div>
+                <div style={{height:5,width:20,margin:"0 auto",borderTop:"1px solid white",borderLeft:"1px solid white",borderRight:"1px solid white"}}></div>
               </div>
               <span className="IDE__DFF__aside-ttl">If</span>
             </div>
@@ -345,9 +345,9 @@ const ConsoleDDF = () => {
             <div className='IDE__DDF__aside-icon' onClick={()=>{handleAddInput("proceso")}}>
 
               <div style={{height:20,width:30,display:"flex",flexDirection:"column",justifyContent:"center"}}>
-                <div style={{height:5,width:1,backgroundColor:"black",margin:"0 auto"}}></div>
+                <div style={{height:5,width:1,backgroundColor:"white",margin:"0 auto"}}></div>
                 <div style={{width:25,height:9,backgroundColor:"red",margin:"0 auto",borderRadius:2}}></div>
-                <div style={{height:5,width:1,backgroundColor:"black",margin:"0 auto"}}></div>
+                <div style={{height:5,width:1,backgroundColor:"white",margin:"0 auto"}}></div>
               </div>
               <span className="IDE__DFF__aside-ttl">Proceso</span>
             </div>
@@ -356,7 +356,7 @@ const ConsoleDDF = () => {
               setInputValues([])
               setSelectedGeneral(true)
               setSelectedStructure(null)
-              }} style={{justifyContent:"center",marginTop:20}}>
+              }} style={{justifyContent:"center",marginTop:20,backgroundColor:"#11121d"}}>
               <span className='IDE__DDF__aside-delete-ttl'>Borrar</span>
             </div>
           </div>
